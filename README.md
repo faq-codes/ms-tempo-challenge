@@ -10,9 +10,9 @@ Se ha separado el desarrollo en distintos casos de uso:
 
 Aplica un incremento de X% sobre la suma de 2 números
 
-### Enterprise Business Rules
+### Use Case Schema
 
-![EBR Schema](docs/images/subausecase-ebr-diagram-01.png)
+![UseCase Schema](docs/images/subausecase-diagram-002.png)
 
 ## HistoryUseCase
 
