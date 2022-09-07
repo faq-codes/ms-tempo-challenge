@@ -26,11 +26,11 @@ public class SubaUseCase implements UseCase<SubaInputModel, SubaOutputModel> {
     var percent = getPercent.getPercent();
     var suba = createSuba.create(inputModel.getX(), inputModel.getY(), percent);
 
-    if (!suba.numberIsValid()) {
+    if (!suba.isNumbersValid()) {
       return presenter.errorView("Los número ingresados no son válidos", inputModel);
     }
 
-    if (!suba.porcentIsValid()) {
+    if (!suba.isPercentValid()) {
       return presenter.errorView("El porcentaje obtenido no es válido", inputModel);
     }
 

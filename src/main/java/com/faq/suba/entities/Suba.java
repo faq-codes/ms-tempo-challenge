@@ -1,8 +1,9 @@
 package com.faq.suba.entities;
 
 public interface Suba {
-  boolean numberIsValid();
-  boolean porcentIsValid();
+  boolean isNumbersValid();
+  boolean isPercentValid();
+  boolean isResultValid();
 
   void calculate();
   
