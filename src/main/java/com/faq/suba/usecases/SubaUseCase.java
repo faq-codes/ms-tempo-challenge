@@ -36,13 +36,13 @@ public class SubaUseCase implements UseCase<SubaInputModel, SubaOutputModel> {
 
     suba.calculate();
 
-    if (Double.isNaN(suba.getResult())) {
+    if (!suba.isResultValid()) {
       return presenter.errorView("El resultado calculado no es válido", inputModel);
     }
 
     var outputModel = new SubaOutputModel(suba.getResult());
 
-    return presenter.sucessView("Se ha calculado el valor satisfactoriamente", outputModel);
+    return presenter.successView("Se ha calculado el valor satisfactoriamente", outputModel);
   }
 
 }

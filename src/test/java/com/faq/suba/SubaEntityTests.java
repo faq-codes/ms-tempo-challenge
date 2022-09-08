@@ -1,8 +1,12 @@
 package com.faq.suba;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.faq.suba.entities.SubaEntity;
@@ -56,18 +60,21 @@ public class SubaEntityTests {
     assertThat(suba.isResultValid()).isFalse();
   }
 
-  @Test
-  void givenXYPercent_whenCalculate_thenResult() {
-    double x = 5.0;
-    double y = 5.0;
-    double percent = 10.0;
-    double result = 11.0;
-
+  @ParameterizedTest
+  @MethodSource("getSubaData")
+  @DisplayName("")
+  void givenXYPercent_whenCalculate_thenResult(double x, double y, double percent, double result) {
     var suba = new SubaEntity(x, y, percent);
 
     suba.calculate();
 
-    assertThat(suba.getResult()).isEqualTo(result);
+    assertEquals(result, suba.getResult());
   }
 
+  private static final Object[] getSubaData() {
+    return new Object[] {
+        new Object[] { 5.0, 5.0, 10.0, 11.0 },
+        new Object[] { 3.0, 7.0, 10.0, 11.0 }
+    };
+  }
 }

@@ -3,15 +3,16 @@ package com.faq.suba.entities;
 /**
  * SubaEntity implements the Suba interface
  * and is in charge of defining the business rules.
- * In this case, calculate an increase in the sum 
+ * In this case, calculate an increase in the sum
  * of two values ​​according to a given percentage.
  */
 public class SubaEntity implements Suba {
 
-  double x;
-  double y;
-  double percent;
-  double result;
+  private final double x;
+  private final double y;
+  private final double percent;
+
+  private double result;
 
   // constructor
   public SubaEntity(double x, double y, double percent) {
@@ -52,7 +53,8 @@ public class SubaEntity implements Suba {
   }
 
   /**
-   * The calculate function calculates the result of adding x and y, and add the percent
+   * The calculate function calculates the result of adding x and y, and add the
+   * percent
    */
   @Override
   public void calculate() {
