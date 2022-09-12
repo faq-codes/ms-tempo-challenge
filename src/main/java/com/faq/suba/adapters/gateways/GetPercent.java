@@ -10,7 +10,12 @@ public class GetPercent implements GetPercentGateway {
 
   @Override
   public double getPercent() {
-    return externalApi.get();
+    try {
+      return externalApi.get();  
+    } catch (Exception e) {
+      System.out.println("ERROR API EXTERNA" + e.getMessage());
+      return 0D;
+    }    
   }
   
 }
