@@ -58,7 +58,7 @@ public class SubaUseCaseTests {
     var inputModel = new SubaInputModel(x, y);
     var outputModel = new SubaOutputModel(result);
 
-    when(presenter.successView(anyString(), any(SubaOutputModel.class))).thenReturn(outputModel);
+    when(presenter.successResponse(anyString(), any(SubaOutputModel.class))).thenReturn(outputModel);
     when(getPercent.getPercent()).thenReturn(percent);
     when(createSuba.create(x, y, percent)).thenReturn(suba);
 
@@ -66,7 +66,7 @@ public class SubaUseCaseTests {
 
     /* solo para verificar interacción de componentes */
 
-    verify(presenter).successView(anyString(), any(SubaOutputModel.class));
+    verify(presenter).successResponse(anyString(), any(SubaOutputModel.class));
   }
 
   @ParameterizedTest
@@ -76,7 +76,7 @@ public class SubaUseCaseTests {
     var inputModel = new SubaInputModel(x, y);
     var outputModel = new SubaOutputModel(result);
 
-    when(presenter.errorView(anyString(), any(SubaInputModel.class))).thenReturn(outputModel);
+    when(presenter.errorResponse(anyString(), any(SubaInputModel.class))).thenReturn(outputModel);
     when(getPercent.getPercent()).thenReturn(percent);
     when(createSuba.create(x, y, percent)).thenReturn(suba);
 
@@ -84,7 +84,7 @@ public class SubaUseCaseTests {
 
     /* solo para verificar interacción de componentes */
 
-    verify(presenter).errorView(anyString(), any(SubaInputModel.class));
+    verify(presenter).errorResponse(anyString(), any(SubaInputModel.class));
   }
 
   private static final Object[] getSubaSuccessData() {

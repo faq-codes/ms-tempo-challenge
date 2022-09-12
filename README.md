@@ -1,6 +1,14 @@
 # ms-tempo-challenge
 
-Para el desarrollo del desafío, se utiliza los principios de [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+Para el desarrollo del desafío, se utiliza los principios de [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) considerando:
+
+### Principios
+SOLID
+DRY
+SAP
+
+### Design Patterns
+Factory Method
 
 # Casos de uso
 
@@ -12,7 +20,7 @@ Aplica un incremento de X% sobre la suma de 2 números
 
 ### Use Case Schema
 
-![UseCase Schema](docs/images/subausecase-diagram-002.png)
+![UseCase Schema](docs/images/subausecase-diagram-003.png)
 
 ## HistoryUseCase
 

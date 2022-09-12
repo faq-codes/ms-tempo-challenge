@@ -4,6 +4,8 @@ public class SubaInputModel {
   private double x;
   private double y;
 
+  public SubaInputModel() { }
+
   public SubaInputModel(double x, double y) {
     this.x = x;
     this.y = y;

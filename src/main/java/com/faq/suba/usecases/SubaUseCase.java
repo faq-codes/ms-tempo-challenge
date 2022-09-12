@@ -27,22 +27,22 @@ public class SubaUseCase implements UseCase<SubaInputModel, SubaOutputModel> {
     var suba = createSuba.create(inputModel.getX(), inputModel.getY(), percent);
 
     if (!suba.isNumbersValid()) {
-      return presenter.errorView("Los número ingresados no son válidos", inputModel);
+      return presenter.errorResponse("Los número ingresados no son válidos", inputModel);
     }
 
     if (!suba.isPercentValid()) {
-      return presenter.errorView("El porcentaje obtenido no es válido", inputModel);
+      return presenter.errorResponse("El porcentaje obtenido no es válido", inputModel);
     }
 
     suba.calculate();
 
     if (!suba.isResultValid()) {
-      return presenter.errorView("El resultado calculado no es válido", inputModel);
+      return presenter.errorResponse("El resultado calculado no es válido", inputModel);
     }
 
     var outputModel = new SubaOutputModel(suba.getResult());
 
-    return presenter.successView("Se ha calculado el valor satisfactoriamente", outputModel);
+    return presenter.successResponse("Se ha calculado el valor satisfactoriamente", outputModel);
   }
 
 }

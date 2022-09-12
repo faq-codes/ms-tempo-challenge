@@ -1,0 +1,13 @@
+package com.faq.suba.usecases;
+
+public class UseCaseProxy<T extends UseCase> {
+  private UseCase<T, U> useCase;
+
+  public UseCaseProxy(T useCase) {
+    this.useCase = useCase;
+  }
+
+  T getInstance() {
+    return (T) this.useCase;
+  }
+}
