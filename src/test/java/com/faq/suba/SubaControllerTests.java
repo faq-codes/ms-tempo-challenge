@@ -1,5 +1,7 @@
 package com.faq.suba;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -29,8 +31,8 @@ import com.faq.suba.usecases.UseCase;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
-public class SubaUseCaseTests {
-
+public class SubaControllerTests {
+  
   @Mock
   CreateSuba createSuba;
 
@@ -51,42 +53,23 @@ public class SubaUseCaseTests {
     assertTrue(useCase instanceof UseCase);
   }
 
-  /* solo para verificar interacción de componentes */
   @ParameterizedTest
   @MethodSource("getSubaSuccessData")
-  void givenXYPercent_whenCalculate_thenSuccessResult(double x, double y, double percent, double result) {
-    var suba = new SubaEntity(x, y, percent);
-    var inputModel = new SubaInputModel(x, y);
-    var outputModel = new SubaOutputModel(result);
+  void givenXY_whenCalculate_thenSuccessResult(double x, double y, double percent, double result) {
+    // var suba = new SubaEntity(x, y, percent);
+    // var inputModel = new SubaInputModel(x, y);
+    // var outputModel = new SubaOutputModel(result);
 
-    when(presenter.successResponse(anyString(), any(SubaOutputModel.class))).thenReturn(outputModel);
-    when(getPercent.getPercent()).thenReturn(percent);
-    when(createSuba.create(x, y, percent)).thenReturn(suba);
+    // when(presenter.successResponse(anyString(), any(SubaOutputModel.class))).thenReturn(outputModel);
+    // when(getPercent.getPercent()).thenReturn(percent);
+    // when(createSuba.create(x, y, percent)).thenReturn(suba);
 
-    var subaOutputModel = useCase.execute(inputModel);
+    // var subaOutputModel = useCase.execute(inputModel);
 
-    /* solo para verificar interacción de componentes */
+    // assertNotNull(subaOutputModel);
+    // assertEquals(result, subaOutputModel.getResult());
 
-    verify(presenter).successResponse(anyString(), any(SubaOutputModel.class));
-  }
-
-  /* solo para verificar interacción de componentes */
-  @ParameterizedTest
-  @MethodSource("getSubaErrorData")
-  void givenXYPercent_whenCalculate_thenErrorResult(double x, double y, double percent, double result) {
-    var suba = new SubaEntity(x, y, percent);
-    var inputModel = new SubaInputModel(x, y);
-    var outputModel = new SubaOutputModel(result);
-
-    when(presenter.errorResponse(anyString(), any(SubaInputModel.class))).thenReturn(outputModel);
-    when(getPercent.getPercent()).thenReturn(percent);
-    when(createSuba.create(x, y, percent)).thenReturn(suba);
-
-    var subaOutputModel = useCase.execute(inputModel);
-
-    /* solo para verificar interacción de componentes */
-
-    verify(presenter).errorResponse(anyString(), any(SubaInputModel.class));
+    // verify(presenter).successResponse(anyString(), any(SubaOutputModel.class));
   }
 
   private static final Object[] getSubaSuccessData() {
@@ -94,15 +77,6 @@ public class SubaUseCaseTests {
         new Object[] { 5.0, 5.0, 10.0, 11.0 },
         new Object[] { 3.0, 7.0, 10.0, 11.0 },
         new Object[] { 3.0, 7.0, 10.0, 15.0 },
-    };
-  }
-
-  private static final Object[] getSubaErrorData() {
-    return new Object[] {
-        new Object[] { Double.NaN, 5.0, 10.0, 10.0 },
-        new Object[] { 3.0, Double.NaN, 10.0, 9.0 },
-        new Object[] { 1.0, 1.0, Double.NaN, 9.0 },
-        new Object[] { Double.POSITIVE_INFINITY, 6.0, 10.0, 8.0 },
     };
   }
 }
