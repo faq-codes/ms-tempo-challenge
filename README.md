@@ -24,6 +24,12 @@ Aplica un incremento de X% sobre la suma de 2 números
 
 ## HistoryUseCase
 
+Historial de todos los llamados a todos los endpoint junto con la respuesta en caso de haber sido exitoso
+
+### Use Case Schema
+
+![UseCase Schema](docs/images/historyusecase-diagram-001.png)
+
 ## SignupUseCase
 
 ## SigninUseCase
