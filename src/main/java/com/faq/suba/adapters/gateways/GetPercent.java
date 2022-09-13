@@ -1,5 +1,7 @@
 package com.faq.suba.adapters.gateways;
 
+import com.faq.suba.adapters.gateways.api.ExternalApiGateway;
+
 public class GetPercent implements GetPercentGateway {
 
   ExternalApiGateway externalApi;

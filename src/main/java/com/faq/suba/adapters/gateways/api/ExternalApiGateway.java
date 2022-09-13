@@ -1,4 +1,4 @@
-package com.faq.suba.adapters.gateways;
+package com.faq.suba.adapters.gateways.api;
 
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.scheduling.annotation.Scheduled;
