@@ -3,10 +3,10 @@ package com.faq.suba.configurations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.faq.suba.adapters.gateways.ExternalApiGateway;
+import com.faq.suba.adapters.gateways.ExternalApiMock;
 import com.faq.suba.adapters.gateways.GetPercent;
 import com.faq.suba.adapters.gateways.GetPercentGateway;
-import com.faq.suba.adapters.gateways.api.ExternalApiGateway;
-import com.faq.suba.adapters.gateways.api.ExternalApiMock;
 import com.faq.suba.adapters.presenters.Presenter;
 import com.faq.suba.adapters.presenters.SubaPresenter;
 import com.faq.suba.entities.CreateSuba;
