@@ -1,4 +1,4 @@
-package com.faq.suba.adapters.gateways.api;
+package com.faq.suba.adapters.gateways;
 
 import java.util.Random;
 
