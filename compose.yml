@@ -11,4 +11,6 @@ services:
     volumes:
       - data:/var/lib/postgresql
   app:
-    image: faq2035/challenge-suba-app
+    image: docker.io/library/suba:0.0.1-SNAPSHOT
+    ports:
+      - 8080:8080
