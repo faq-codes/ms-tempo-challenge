@@ -17,7 +17,7 @@ import com.faq.suba.usecases.SubaUseCase;
 import com.faq.suba.usecases.UseCase;
 
 @Configuration
-public class GeneralConfiguration {
+public class SubaConfiguration {
 
   @Bean
   CreateSuba getCreateSuba() {

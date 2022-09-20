@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.faq.suba.entities.SubaEntity;
 
-@SpringBootTest
 public class SubaEntityTests {
 
   @Test

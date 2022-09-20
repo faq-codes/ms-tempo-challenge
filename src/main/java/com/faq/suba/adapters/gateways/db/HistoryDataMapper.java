@@ -2,6 +2,7 @@ package com.faq.suba.adapters.gateways.db;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,11 +13,16 @@ import javax.persistence.Table;
 @Table(name = "history")
 public class HistoryDataMapper {
   @Id
+  @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
+  @Column(name = "date")
   private LocalDateTime date;
+  @Column(name = "endpoint")
   private String endpoint;
+  @Column(name = "request")
   private String request;
+  @Column(name = "response")
   private String response;
 
   public int getId() {

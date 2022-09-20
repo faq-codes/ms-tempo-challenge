@@ -28,7 +28,6 @@ import com.faq.suba.models.SubaOutputModel;
 import com.faq.suba.usecases.SubaUseCase;
 import com.faq.suba.usecases.UseCase;
 
-@SpringBootTest
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 public class SubaControllerTests {
