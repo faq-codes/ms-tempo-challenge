@@ -1,5 +1,7 @@
 package com.faq.suba.adapters.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,9 +12,11 @@ import com.faq.suba.models.SubaInputModel;
 import com.faq.suba.models.SubaOutputModel;
 import com.faq.suba.usecases.UseCase;
 
-@RestController()
+@RestController
 @RequestMapping("/api")
 public class SubaController {
+
+  private static final Logger logger = LogManager.getLogger();
 
   UseCase<SubaInputModel, SubaOutputModel> subaUseCase;
 

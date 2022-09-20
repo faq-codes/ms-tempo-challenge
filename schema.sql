@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS history(id INTEGER PRIMARY KEY, date DATE, endpoint VARCHAR, request VARCHAR, response VARCHAR);
