@@ -1,14 +1,15 @@
 # ms-tempo-challenge
 
-Para el desarrollo del desafío, se utiliza los principios de [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) considerando:
+Para el desarrollo del desafío, se utiliza los principios de [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) aplicado a 3 casos de uso.
+
+Se intenta desacoplar en capas de tal manera de "proteger" las reglas de negocio de los detalles de la infraestructura utilizando inversión de dependencias y sin anotaciones de SpringBoot para desacoplar, por ejemplo, el DI framework
+
+Se presentan esquemas de cómo se han desarrollado los casos de uso, desde las reglas de negocio hasta la implementación de las interfaces utilizadas (ver imágenes docs/images *-001.png a *-003.png o el historial de Github)
 
 ### Principios
 SOLID,
 DRY,
 SAP
-
-### Design Patterns
-Factory Method,
 
 # Casos de uso
 
@@ -32,29 +33,32 @@ a. Guardar historial
 ![UseCase Schema](docs/images/historyusecase-diagram-003.png)
 
 b. Obtener historial
-![UseCase Schema](docs/images/historygetusecase-diagram-002.png)
+![UseCase Schema](docs/images/historygetusecase-diagram-003.png)
 
-# requirements
-Debes desarrollar una API REST en Spring Boot utilizando java 11 o superior, con las siguientes funcionalidades:
+# Instalación
 
-a. Sign up usuarios.
 
-b. Login usuarios.
+# Build
 
-c. Debe contener un servicio llamado por api-rest que reciba 2 números, los sume, y le aplique una suba de un porcentaje que debe ser adquirido de un servicio externo (por ejemplo, si el servicio recibe 5 y 5 como valores, y el porcentaje devuelto por el servicio externo es 10, entonces (5 + 5) + 10% = 11). Se deben tener en cuenta las siguientes consideraciones:
+Clonar el repositorio 
+```
+git clone https://github.com/faq2035/ms-tempo-challenge.git
+```
 
-El servicio externo puede ser un mock, tiene que devolver el % sumado. Dado que ese % varía poco, debe ser consumido cada media hora. Si el servicio externo falla, se debe devolver el último valor retornado. Si no hay valor, debe retornar un error la api. Si el servicio externo falla, se puede reintentar hasta 3 veces.
+Compilar los fuentes
+```
+./mvn clean package
+```
 
-d. Historial de todos los llamados a todos los endpoint junto con la respuesta en caso de haber sido exitoso. Responder en Json, con data paginada. El guardado del historial de llamadas no debe sumar tiempo al servicio invocado.
+Generar la imagen docker (con springboot)
+```
+mvn spring-boot:build-image
+```
 
-e. El historial y la información de los usuarios se debe almacenar en una database PostgreSQL.
+Ejecutar la aplicación con docker-compose
+```
+docker compose up
+```
 
-f. Incluir errores http. Mensajes y descripciones para la serie 4XX.
+La aplicación se levanta en el puerto 8080. Puede ser consumida por el [Postman](/challenge.postman_collection.json) adjunto
 
-2. Se deben incluir tests unitarios.
-
-3. Esta API debe ser desplegada en un docker container. Este docker puede estar en un dockerhub público. La base de datos también debe correr en un contenedor docker. Recomendación usar docker compose
-
-4. Debes agregar un Postman Collection o Swagger para que probemos tu API
-
-5. Tu código debe estar disponible en un repositorio público, junto con las instrucciones de cómo desplegar el servicio y cómo utilizarlo.
