@@ -3,7 +3,7 @@ package com.faq.suba.models;
 public class HistoryOutputModel {
   private final boolean result;
 
-  public boolean Result() {
+  public boolean result() {
     return result;
   }
 

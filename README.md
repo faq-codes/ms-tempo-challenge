@@ -3,12 +3,12 @@
 Para el desarrollo del desafío, se utiliza los principios de [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) considerando:
 
 ### Principios
-SOLID
-DRY
+SOLID,
+DRY,
 SAP
 
 ### Design Patterns
-Factory Method
+Factory Method,
 
 # Casos de uso
 
@@ -24,12 +24,15 @@ Aplica un incremento de X% sobre la suma de 2 números
 
 ## HistoryUseCase
 
-Historial de todos los llamados a todos los endpoint junto con la respuesta en caso de haber sido exitoso. El caso de uso tiene dos partes: la primera es la encargada de guardar los datos y la segunda de obtener los datos paginados
+Historial de todos los llamados a todos los endpoint junto con la respuesta en caso de haber sido exitoso. El caso de uso tiene dos partes: la primera es la encargada de guardar los datos del historial en la base de datos y la segunda de obtener los datos paginados
 
 ### Use Case Schema
 
-![UseCase Schema](docs/images/historyusecase-diagram-002.png)
+a. Guardar historial
+![UseCase Schema](docs/images/historyusecase-diagram-003.png)
 
+b. Obtener historial
+![UseCase Schema](docs/images/historygetusecase-diagram-002.png)
 
 # requirements
 Debes desarrollar una API REST en Spring Boot utilizando java 11 o superior, con las siguientes funcionalidades:
