@@ -21,7 +21,7 @@ Aplica un incremento de X% sobre la suma de 2 números
 
 ### Use Case Schema
 
-![UseCase Schema](docs/images/subausecase-diagram-003.png)
+![UseCase Schema](docs/images/subausecase-diagram-004.png)
 
 ## HistoryUseCase
 
